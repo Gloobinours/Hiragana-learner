@@ -5,12 +5,12 @@ var randomLatin = () => {
     if (simpleHiraganaCheckbox.checked) {
         // gets array of keys in object hiraganas
         // keys = Object.keys( hiraganas );
-        keys = keys.concat(Object.keys( hiraganas ));
+        keys = keys.concat(Object.keys( hiraganas )); // merges the array in a new array called keys
     }
     if (doubleHiraganaCheckbox.checked) {
-        // gets array of keys in object hiraganas
+        // gets array of keys in object hiraganasDouble
         // keys = Object.keys( hiraganasDouble );
-        keys = keys.concat(Object.keys( hiraganasDouble ));
+        keys = keys.concat(Object.keys( hiraganasDouble )); // merges the array in a new array called keys
     }
     // randomly takes a key from the object hiraganas
     return keys[ Math.floor( keys.length * Math.random() ) ];
