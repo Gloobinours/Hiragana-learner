@@ -4,23 +4,21 @@ var randomLatin = () => {
     let keys = []
     if (simpleHiraganaCheckbox.checked) {
         // gets array of keys in object hiraganas
-        // keys = Object.keys( hiraganas );
         keys = keys.concat(Object.keys( hiraganas )); // merges the array in a new array called keys
     }
     if (doubleHiraganaCheckbox.checked) {
         // gets array of keys in object hiraganasDouble
-        // keys = Object.keys( hiraganasDouble );
         keys = keys.concat(Object.keys( hiraganasDouble )); // merges the array in a new array called keys
     }
-    // randomly takes a key from the object hiraganas
+    // randomly takes a key from the array keys
     return keys[ Math.floor( keys.length * Math.random() ) ];
 };
 
-const hiraganaOutput = document.getElementById('hiragana');
-const input = document.getElementById('input');
-const answerElement = document.getElementById('answer');
-const simpleHiraganaCheckbox = document.getElementById('simpleHiraganaCheckbox');
-const doubleHiraganaCheckbox = document.getElementById('doubleHiraganaCheckbox');
+const hiraganaOutput = document.getElementById('hiragana'); // Area where the Hiraganas appear
+const input = document.getElementById('input'); // Input box
+const answerElement = document.getElementById('answer'); // Modal box for the answer
+const simpleHiraganaCheckbox = document.getElementById('simpleHiraganaCheckbox'); // checkbox to make simple hiraganas appear
+const doubleHiraganaCheckbox = document.getElementById('doubleHiraganaCheckbox'); // checkbox to make simple "double" hiraganas appear
 
 let answer = randomLatin(); // Stores the value returned by randomLatin
 hiraganaOutput.innerHTML = hiraganas[answer] || hiraganasDouble[answer]; // Displays the hiraganas on the screen
