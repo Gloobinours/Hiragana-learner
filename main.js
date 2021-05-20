@@ -1,15 +1,15 @@
 
 // Returns the random number generated + the hiragana
 var randomLatin = () => {
-    let keys = []
+    let keys = [];
     if (simpleHiraganaCheckbox.checked) {
         // gets array of keys in object hiraganas
         keys = keys.concat(Object.keys( hiraganas )); // merges the array in a new array called keys
-    }
+    };
     if (doubleHiraganaCheckbox.checked) {
         // gets array of keys in object hiraganasDouble
         keys = keys.concat(Object.keys( hiraganasDouble )); // merges the array in a new array called keys
-    }
+    };
     // randomly takes a key from the array keys
     return keys[ Math.floor( keys.length * Math.random() ) ];
 };
@@ -34,7 +34,7 @@ input.addEventListener('keypress', (e) => {
         } else { // if the input value is different from the answer: changes the top modal to display:flex, pushes the answer in modal
             answerElement.style.display = 'flex';
             answerElement.innerHTML = answer;
-        }
+        };
         input.value = ''; // resets the input value to nothing
-    }
-})
+    };
+});
